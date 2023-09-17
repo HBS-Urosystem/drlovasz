@@ -20,25 +20,28 @@
 */
 
 article {
-	/*display: grid;
-	grid-template-columns: repeat(2, minmax(32ch, 1fr));
-	gap: 0 3rem!important;*/
-}
-.prose {
   max-width: fit-content!important;
-}
-.prose {
   /*columns: 33ch auto;*/
   display: grid;
 	grid-template-columns: repeat(2, minmax(33ch, 1fr));
-  gap: 3rem!important;
+  gap: 3rem;
 }
-.prose ul, .prose li {
+@media only screen and (max-width: 104ch) {
+  article {
+    display: block;
+  }
+}
+
+article ul {
+	grid-column-end: span 2;
+}
+article ul, article li {
   padding-inline: 0;
   margin-inline: 0;
 }
 
 article > * {
+  /*width: 33ch;*/
 	/*margin-inline: auto;*/
 	/* max-width: max(100%,29ch); */
 	/*padding-inline-start: .67ch;*/
@@ -56,7 +59,7 @@ article > * {
 	margin-block: 1.5rem;
 }
 
-.prose date {
+article date {
   grid-column-end: span 2;
   /*max-width: 80ch;*/
   width: 100%;

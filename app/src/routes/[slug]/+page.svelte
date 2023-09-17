@@ -25,7 +25,7 @@
   }
 </script>
 
-<article class="post prose gap-x-0 gap-y-0">
+<article class="post prose gap-xx-0 gap-y-0">
 
   {#if !!data.mainImage}
     <figure class="mainimg">
