@@ -1,4 +1,4 @@
-# A minimal SvelteKit site with Sanity Studio
+# SvelteKit site with Sanity Studio
 
 This starter uses [SvelteKit](https://kit.svelte.dev/) for the frontend and [Sanity](https://sanity.io/) to handle its content.
 
@@ -28,11 +28,11 @@ The following commands are meant to be run in **both** the `/app` and `/studio` 
 2. `npx -y sanity@latest init --env`, this will:
 
 - ask you to select or create a Sanity project and dataset, use the same Sanity project and dataset in both folders.
-- output a `.env` file with appropriate variables
+- output the `.env` files with appropriate variables
 - _(or use `sanity init --env` if you have the CLI installed)_
 
-4. Prefix your environment variables in the SvelteKit `/app` folder with `PUBLIC_`, they should be `PUBLIC_SANITY_DATASET` and `PUBLIC_SANITY_PROJECT_ID`.
-3. `npm run dev` to start the development server
+3. Prefix your environment variables in the SvelteKit `/app` folder with `PUBLIC_`, they should be `PUBLIC_SANITY_DATASET` and `PUBLIC_SANITY_PROJECT_ID`.
+4. `npm run dev` to start the development server
 
 Your SvelteKit app should now be running on [http://localhost:5173/](http://localhost:5173/) and Studio on [http://localhost:3333/](http://localhost:3333/).
 

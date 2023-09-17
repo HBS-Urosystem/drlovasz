@@ -27,6 +27,21 @@ export default defineType({
       rows: 4,
     }),
     defineField({
+      name: 'cta',
+      title: 'CTA',
+      type: 'object',
+      fields: [
+        {
+          name: 'text',
+          type: 'string'
+        },
+        {
+          name: 'link',
+          type: 'string'
+        }
+      ]
+    }),
+    defineField({
       name: 'mainImage',
       title: 'Main image',
       type: 'image',

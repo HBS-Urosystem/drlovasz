@@ -51,10 +51,33 @@ export default defineType({
                 name: 'href',
                 type: 'url',
               },
+              {
+                title: 'External',
+                name: 'rel',
+                type: 'boolean',
+                default: false,
+              },
             ],
           },
-        ],
-      },
+          {
+            name: 'internalLink',
+            type: 'object',
+            title: 'Internal link',
+            fields: [
+              {
+                name: 'reference',
+                type: 'reference',
+                title: 'Reference',
+                to: [
+                  { type: 'post' },
+                  // other types you may want to link to
+                ]
+              }
+            ]
+          }
+        ]
+      }
+
     }),
   ],
 })

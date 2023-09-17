@@ -1,0 +1,67 @@
+/*Write your global styles here, in PostCSS syntax*/
+
+@tailwind base;
+
+:root {
+	--rounded-btn: 1rem;
+}
+
+/*body {
+	margin: 0;
+}
+
+.post .post__cover,
+.post .post__cover--none {
+	width: 100%;
+	height: 200px;
+	-o-object-fit: cover;
+	object-fit: cover;
+}
+*/
+
+article {
+	/*display: grid;
+	grid-template-columns: repeat(2, minmax(32ch, 1fr));
+	gap: 0 3rem!important;*/
+}
+.prose {
+  max-width: fit-content!important;
+}
+.prose {
+  /*columns: 33ch auto;*/
+  display: grid;
+	grid-template-columns: repeat(2, minmax(33ch, 1fr));
+  gap: 3rem!important;
+}
+.prose ul, .prose li {
+  padding-inline: 0;
+  margin-inline: 0;
+}
+
+article > * {
+	/*margin-inline: auto;*/
+	/* max-width: max(100%,29ch); */
+	/*padding-inline-start: .67ch;*/
+	box-sizing: content-box;
+	transition: all 0.25s;
+	/* position: relative; */
+	display: block;
+	border-radius: 0.35rem;
+	/*background-color: aliceblue;*/
+	box-shadow: var(--shadow) 0 0 0.5rem;
+	/*width: 100%;*/
+	/*height: 100%;*/
+	/*margin-top: 1.75rem;*/
+	/*padding-inline-start: 0.67rem;*/
+	margin-block: 1.5rem;
+}
+
+.prose date {
+  grid-column-end: span 2;
+  /*max-width: 80ch;*/
+  width: 100%;
+  text-align: center;
+}
+
+@tailwind components;
+@tailwind utilities;
