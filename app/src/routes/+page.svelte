@@ -36,7 +36,7 @@
 </section>
 -->
 
-<article class="post prose gap-x-0 gap-y-0">
+<article class="prose gap-x-8 gap-y-0">
 
   {#if !!data.mainImage}
     <figure class="mainimg">
@@ -50,7 +50,7 @@
     <p class="post__cover--none" />
   {/if}
   <header>
-    <h2 class="post__title">{data.title}</h2>
+    <h1 class="post__title">{data.title}</h1>
     {#if data.excerpt}<p class="post__excerpt">{data.excerpt}</p>{/if}
     {#if data.cta}
     <aside>
@@ -59,16 +59,18 @@
     {/if}
   </header>
   <date class="post__date text-sm">Frissítve: 
-    {formatDate(data._createdAt)}
+    {formatDate(data._updateAt || data._createdAt)}
   </date>
   <PortableText value={data.body} components={formatBody}/>
 </article>
 
 <style>
-  article :global(p) {
+  article.prose :global(p) {
     margin-block: 0;
   }
-
+  header {
+    position:relative;
+  }
   /*article {
     @apply mx-4;
   }*/

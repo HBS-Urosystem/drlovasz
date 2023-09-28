@@ -4,6 +4,7 @@
 
 :root {
 	--rounded-btn: 1rem;
+  --max-pad: 1rem;
 }
 
 /*body {
@@ -18,13 +19,32 @@
 	object-fit: cover;
 }
 */
+body > div > header {
+	width: 100%;
+	/*height: 200px;*/
+	-o-object-fit: cover;
+	object-fit: cover;
+
+	display: flex;
+	padding: 0 var(--space-1);
+	border-bottom: 1px solid #ced2d9;
+
+	z-index: 10;
+	/*background: white;*/
+	position: fixed;
+	left: 0;
+	right: 0;
+	top: 0;
+}
 
 article {
-  max-width: fit-content!important;
+  width: fit-content!important;
+  /*max-width: 65ch;*/
   /*columns: 33ch auto;*/
   display: grid;
 	grid-template-columns: repeat(2, minmax(33ch, 1fr));
   gap: 3rem;
+  margin-inline-start: calc(var(--max-pad)/3);
 }
 @media only screen and (max-width: 104ch) {
   article {
@@ -57,6 +77,8 @@ article > * {
 	/*margin-top: 1.75rem;*/
 	/*padding-inline-start: 0.67rem;*/
 	margin-block: 1.5rem;
+  max-width: 65ch;
+  margin-inline-start: calc(var(--max-pad));
 }
 
 article date {
@@ -65,6 +87,20 @@ article date {
   width: 100%;
   text-align: center;
 }
+
+article > h1,
+article > h2,
+article > h3,
+article > h4,
+article > a {
+	grid-column-end: span 2;
+	/* grid-row-end: span 2; */
+/*	max-width: 80ch;*/
+	margin-inline-start: calc(var(--max-pad)) / 3;
+  /*margin-inline: auto;*/
+	/*margin-block-end: 1rem;*/
+}
+
 
 @tailwind components;
 @tailwind utilities;
