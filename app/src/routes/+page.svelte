@@ -9,6 +9,7 @@
 
 	export let data: PageData;
   //console.log(data.body)
+  
   const formatBody = {
     marks: {
       internalLink: internalLink,
