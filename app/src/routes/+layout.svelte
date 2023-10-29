@@ -3,11 +3,9 @@
 	import '$src/app.postcss';
 </script>
 
-<nav></nav>
-
-<header>
-	<a href="/" class="mx-auto"><h1 class="header__title">Dr. Lovász Sándor Ph.D.</h1></a>
-</header>
+<nav>
+	<a href="/" class="mx-auto"><h1 class="nav__title">Dr. Lovász Sándor Ph.D.</h1></a>
+</nav>
 <main class="mt-12 p-12 mx-auto">
 	<slot />
 </main>
@@ -31,17 +29,22 @@
 </footer>
 
 <style>
-  header {
+  nav {
     @apply h-12 items-center;
   }
   
-  main > :global(*) {
-    @apply max-w-prose mx-auto;
+  main {
+    @apply mt-12 p-12;
+  }
+  @media only screen and (max-width: 104ch) {
+    main {
+      padding-inline: 6rem;
+    }
   }
 
-  /*footer > p {
+  footer > p {
     @apply w-max;
-  }*/
+  }
   
   svg {
     display: inline-block;

@@ -3,7 +3,8 @@
 
   // Property custom marks receive from @portabletext/svelte when redered
   export let portableText: MarkComponentProps<{
-    slug?: { _type: string, current: string }
+    rel?: boolean,
+    href?: string
   }>
 
   // Remember to make your variables reactive so that they can reflect prop changes
@@ -12,10 +13,6 @@
   //$: newWindow = value.newWindow || false
 </script>
 
-{#if value.slug}
-  <a href={value.slug.current}>
-    <button>[&thinsp;<slot />&thinsp;▶︎]</button>
-  </a>
-{:else}
-  <slot />
-{/if}
+<a href={value.href} rel="external noopener" target="_blank">
+  <button>[&thinsp;<slot />&thinsp;▶︎]</button>
+</a>

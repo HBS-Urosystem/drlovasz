@@ -4,7 +4,7 @@
 
 :root {
 	--rounded-btn: 1rem;
-  --max-pad: 1rem;
+  --max-pad: 2rem;
 }
 
 /*body {
@@ -19,7 +19,7 @@
 	object-fit: cover;
 }
 */
-body > div > header {
+nav {
 	width: 100%;
 	/*height: 200px;*/
 	-o-object-fit: cover;
@@ -30,34 +30,31 @@ body > div > header {
 	border-bottom: 1px solid #ced2d9;
 
 	z-index: 10;
-	/*background: white;*/
+	background: white;
 	position: fixed;
 	left: 0;
 	right: 0;
 	top: 0;
 }
 
+header {
+  margin-bottom: 3rem;
+}
+aside {
+  margin-bottom: 3rem;
+}
+
 article {
-  width: fit-content!important;
-  /*max-width: 65ch;*/
-  /*columns: 33ch auto;*/
   display: grid;
-	grid-template-columns: repeat(2, minmax(33ch, 1fr));
-  gap: 3rem;
-  margin-inline-start: calc(var(--max-pad)/3);
+	/*grid-template-columns: repeat(2, minmax(33ch, 1fr));*/
+  /*gap: 3rem;*/
+  margin-inline: auto;
+  margin-bottom: 3rem;
 }
 @media only screen and (max-width: 104ch) {
   article {
     display: block;
   }
-}
-
-article ul {
-	grid-column-end: span 2;
-}
-article ul, article li {
-  padding-inline: 0;
-  margin-inline: 0;
 }
 
 article > * {
@@ -76,29 +73,59 @@ article > * {
 	/*height: 100%;*/
 	/*margin-top: 1.75rem;*/
 	/*padding-inline-start: 0.67rem;*/
-	margin-block: 1.5rem;
+	/*margin-block: 1.25rem;*/
   max-width: 65ch;
   margin-inline-start: calc(var(--max-pad));
 }
 
-article date {
-  grid-column-end: span 2;
-  /*max-width: 80ch;*/
-  width: 100%;
-  text-align: center;
-}
-
 article > h1,
-article > h2,
+article > h2 {
+  margin-inline-start: 0;
+	grid-column-end: span 2;
+}
 article > h3,
 article > h4,
-article > a {
+article a {
 	grid-column-end: span 2;
 	/* grid-row-end: span 2; */
 /*	max-width: 80ch;*/
-	margin-inline-start: calc(var(--max-pad)) / 3;
+	margin-inline-start: calc(var(--max-pad) / 2);
   /*margin-inline: auto;*/
 	/*margin-block-end: 1rem;*/
+}
+
+.prose :where(p):not(:where([class~="not-prose"],[class~="not-prose"] *)) {
+  margin-top: 0; 
+  margin-bottom: 0; 
+}
+.prose :where(li):not(:where([class~="not-prose"],[class~="not-prose"] *)) {
+  margin-top: .25em;
+  margin-bottom: .25em;
+}
+
+.prose p {
+  margin-block: 0;
+}
+
+.prose > p:nth-of-type(even) {
+  align-self: end;
+}
+.prose > p + p:not(:empty):nth-of-type(odd) {
+  margin-top: .75rem; /* ez jo */
+}
+
+/*.prose > *:empty {
+  margin-top: 0!important;
+}*/
+
+
+
+article ul {
+	grid-column-end: span 2;
+}
+article ul, article li {
+  padding-inline: 0;
+  margin-inline: 0;
 }
 
 

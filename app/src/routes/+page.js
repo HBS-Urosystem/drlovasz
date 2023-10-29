@@ -1,14 +1,14 @@
-//import { getPosts } from '$lib/utils/sanity';
-import { getPost } from "$lib/utils/sanity";
+//import { getPages } from '$lib/utils/sanity';
+import { getPage } from "$lib/utils/sanity";
 import { error } from "@sveltejs/kit";
 
 /*
 export const load = (async () => {
-	const posts = await getPosts();
+	const pages = await getPages();
 
-	if (posts) {
+	if (pages) {
 		return {
-			posts
+			pages
 		};
 	}
 
@@ -17,8 +17,8 @@ export const load = (async () => {
 */
 
 export const load = async () => {
-  const post = await getPost("index");
-  if (post) return post;
+  const page = await getPage("index");
+  if (page) return page;
 
   throw error(404, "Not that found");
 };

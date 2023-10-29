@@ -50,12 +50,6 @@ export default defineType({
                 name: 'href',
                 type: 'url',
               },
-              {
-                title: 'External',
-                name: 'rel',
-                type: 'boolean',
-                default: false,
-              },
             ],
           },
           {
@@ -64,11 +58,11 @@ export default defineType({
             title: 'Internal link',
             fields: [
               {
-                name: 'reference',
+                name: 'href',
                 type: 'reference',
-                title: 'Reference',
+                title: 'Page',
                 to: [
-                  { type: 'post' },
+                  { type: 'page' },
                   // other types you may want to link to
                 ]
               }
