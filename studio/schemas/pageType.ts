@@ -30,8 +30,8 @@ export const pageType = defineType({
     }),
     defineField({
       name: 'pageBuilder',
-      type: 'array',
       title: 'Page builder',
+      type: 'array',
       of: [
         defineArrayMember({
           name: 'heading',
@@ -41,6 +41,15 @@ export const pageType = defineType({
           name: 'body',
           title: 'Body',
           type: 'blockType',
+        }),
+        defineArrayMember({
+          name: 'details',
+          type: 'details',
+        }),
+        defineArrayMember({
+          name: 'twocols',
+          title: '2 columns',
+          type: 'twocols',
         }),
 
         defineArrayMember({
@@ -90,6 +99,9 @@ export const pageType = defineType({
               title: 'URL',
               name: 'href',
               type: 'url',
+              validation: Rule => Rule.uri({
+                scheme: ['http', 'https', 'mailto', 'tel']
+              }),
             },
           ],
           icon: LeaveIcon,

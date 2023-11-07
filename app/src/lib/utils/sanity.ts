@@ -37,9 +37,7 @@ export async function getPage (slug: string) {
           excerpt,
           image,
         },
-        // if "cta" was a "document reference"
-        // We could resolve "itself" with the @ operator: "cta" => @-> {
-        // But it's "reference" is the reference.
+
         _type == "cta" => {
           _type,
           text,
@@ -63,7 +61,20 @@ export async function getPage (slug: string) {
               }
             }
           }
-        }
+        },
+        _type == "details" => {
+          _type,
+          summary,
+          details[] {
+            ...,
+            markDefs[]{
+              ...,
+              _type == "internalLink" => {
+                "slug": @.reference->slug
+              }
+            }
+          }
+        },
       },
     }`,
     {

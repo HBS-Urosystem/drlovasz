@@ -43,7 +43,10 @@ header {
 aside {
   margin-bottom: 3rem;
 }
-
+details {
+  margin-inline: auto;
+  margin-bottom: 3rem;
+}
 article {
   display: grid;
 	/*grid-template-columns: repeat(2, minmax(33ch, 1fr));*/
@@ -57,7 +60,7 @@ article {
   }
 }
 
-article > * {
+.prose > * {
   /*width: 33ch;*/
 	/*margin-inline: auto;*/
 	/* max-width: max(100%,29ch); */
@@ -65,7 +68,7 @@ article > * {
 	box-sizing: content-box;
 	transition: all 0.25s;
 	/* position: relative; */
-	display: block;
+	/*display: block;*/
 	border-radius: 0.35rem;
 	/*background-color: aliceblue;*/
 	box-shadow: var(--shadow) 0 0 0.5rem;
@@ -84,14 +87,9 @@ article > h2 {
 	grid-column-end: span 2;
 }
 article > h3,
-article > h4,
 article a {
 	grid-column-end: span 2;
-	/* grid-row-end: span 2; */
-/*	max-width: 80ch;*/
 	margin-inline-start: calc(var(--max-pad) / 2);
-  /*margin-inline: auto;*/
-	/*margin-block-end: 1rem;*/
 }
 
 .prose :where(p):not(:where([class~="not-prose"],[class~="not-prose"] *)) {
