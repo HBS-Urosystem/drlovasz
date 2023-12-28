@@ -16,6 +16,11 @@ export const blockType = defineType({
       title: 'Text Content',
       type: 'blockContent',
     }),
+    defineField({
+      name: 'twocols',
+      title: 'Two columns?',
+      type: 'boolean',
+    }),
   ],
   icon: StringIcon,
   preview: {

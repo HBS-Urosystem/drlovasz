@@ -43,6 +43,7 @@ export async function getPage (slug: string) {
           text,
           "href": @.reference->slug.current
         },
+
         _type == "xcta" => {
           _type,
           text,
@@ -60,8 +61,10 @@ export async function getPage (slug: string) {
                 "slug": @.reference->slug
               }
             }
-          }
+          },
+          twocols,
         },
+    
         _type == "details" => {
           _type,
           summary,
@@ -75,6 +78,63 @@ export async function getPage (slug: string) {
             }
           }
         },
+
+        _type == "card" => {
+          ...,
+          pageBuilder[]{
+            // "heading" is an "object" from which we can "pick" fields
+            _type == "heading" => {
+              _type,
+              heading,
+              tagline,
+              excerpt,
+              image,
+            },
+    
+            _type == "cta" => {
+              _type,
+              text,
+              "href": @.reference->slug.current
+            },
+    
+            _type == "xcta" => {
+              _type,
+              text,
+              href
+            },
+        
+            _type == "body" => {
+              _type,
+              title,
+              textBlock[] {
+                ...,
+                markDefs[]{
+                  ...,
+                  _type == "internalLink" => {
+                    "slug": @.reference->slug
+                  }
+                }
+              },
+              twocols,
+            },
+        
+            _type == "details" => {
+              _type,
+              summary,
+              details[] {
+                ...,
+                markDefs[]{
+                  ...,
+                  _type == "internalLink" => {
+                    "slug": @.reference->slug
+                  }
+                }
+              }
+            },
+    
+          },
+        },
+
       },
     }`,
     {

@@ -3,7 +3,6 @@
 
   // Property custom marks receive from @portabletext/svelte when redered
   export let portableText: MarkComponentProps<{
-    rel?: boolean,
     href?: string
   }>
 
@@ -13,6 +12,6 @@
   //$: newWindow = value.newWindow || false
 </script>
 
-<a href={value.href} rel="external noopener" target="_blank">
-  <button>[&thinsp;<slot />&thinsp;▶︎]</button>
+<a class="" href={value.href} rel="external noopener" target="_blank">
+  <button class="btn btn-sm"><slot /></button>
 </a>

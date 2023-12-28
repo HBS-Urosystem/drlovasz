@@ -1,0 +1,6 @@
+{
+  "icons": [
+    { "src": "/dr_lovasz_sandor.png", "type": "image/png", "sizes": "192x192" },
+    { "src": "/dr_lovasz_sandor.png", "type": "image/png", "sizes": "512x512" }
+  ]
+}

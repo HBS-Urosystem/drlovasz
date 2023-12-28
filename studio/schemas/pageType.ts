@@ -29,6 +29,12 @@ export const pageType = defineType({
       rows: 4,
     }),
     defineField({
+      name: 'keywords',
+      title: 'SEO Keywords',
+      type: 'text',
+      rows: 2,
+    }),
+    defineField({
       name: 'pageBuilder',
       title: 'Page builder',
       type: 'array',
@@ -47,9 +53,9 @@ export const pageType = defineType({
           type: 'details',
         }),
         defineArrayMember({
-          name: 'twocols',
-          title: '2 columns',
-          type: 'twocols',
+          name: 'card',
+          title: 'Card',
+          type: 'card',
         }),
 
         defineArrayMember({

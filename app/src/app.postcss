@@ -3,129 +3,225 @@
 @tailwind base;
 
 :root {
-	--rounded-btn: 1rem;
+
+  --padding-card: 1rem;
+  --rounded-btn: 1rem;
   --max-pad: 2rem;
+
+}
+body {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
 }
 
-/*body {
-	margin: 0;
+.prose p, .prose ul, .prose ol, .prose dl, .prose table, footer + aside p {
+  -webkit-hyphens:auto;-ms-hyphens:auto;hyphens:auto;
 }
-
-.post .post__cover,
-.post .post__cover--none {
-	width: 100%;
-	height: 200px;
-	-o-object-fit: cover;
-	object-fit: cover;
+.prose h3, .prose h4, .prose h5, .prose h6 {
+  -webkit-hyphens:auto;-ms-hyphens:auto;hyphens:auto;
 }
-*/
-nav {
-	width: 100%;
-	/*height: 200px;*/
-	-o-object-fit: cover;
-	object-fit: cover;
-
-	display: flex;
-	padding: 0 var(--space-1);
-	border-bottom: 1px solid #ced2d9;
-
-	z-index: 10;
-	background: white;
-	position: fixed;
-	left: 0;
-	right: 0;
-	top: 0;
+@supports ((-webkit-hyphens: auto) or (-ms-hyphens: auto) or (hyphens: auto)) {
+  .prose p:not(figcaption *):not(li *):not(aside *), .prose h3, .prose h4, .prose h5, .prose h6 {
+    text-align: justify;
+  }
 }
 
 header {
-  margin-bottom: 3rem;
+  margin-block: 3rem;
 }
-aside {
-  margin-bottom: 3rem;
+
+/*aside {
+  margin-block: 0;
+}*/
+/*margin-block: 3rem;*/
+  aside + *:not(aside) {
+  margin-top: 2.5rem;
 }
-details {
+
+section {
   margin-inline: auto;
-  margin-bottom: 3rem;
+  margin-top: 1.5rem;
+  margin-bottom: .5rem;
 }
+
 article {
   display: grid;
-	/*grid-template-columns: repeat(2, minmax(33ch, 1fr));*/
-  /*gap: 3rem;*/
-  margin-inline: auto;
-  margin-bottom: 3rem;
+  /*grid-template-columns: repeat(2, minmax(33ch, 1fr));*/
+  grid-template-columns: repeat(2, auto);
+  /*margin-inline: auto;*/
+  /*margin-inline: 0;*/
 }
-@media only screen and (max-width: 104ch) {
+@media only screen and (max-width: 65ch) {
   article {
     display: block;
+    /*--max-pad: 2rem;*/
   }
 }
 
 .prose > * {
   /*width: 33ch;*/
-	/*margin-inline: auto;*/
-	/* max-width: max(100%,29ch); */
-	/*padding-inline-start: .67ch;*/
-	box-sizing: content-box;
-	transition: all 0.25s;
-	/* position: relative; */
-	/*display: block;*/
-	border-radius: 0.35rem;
-	/*background-color: aliceblue;*/
-	box-shadow: var(--shadow) 0 0 0.5rem;
-	/*width: 100%;*/
-	/*height: 100%;*/
-	/*margin-top: 1.75rem;*/
-	/*padding-inline-start: 0.67rem;*/
-	/*margin-block: 1.25rem;*/
+  /*margin-inline: auto;*/
+  /* max-width: max(100%,29ch); */
+  /*padding-inline-start: .67ch;*/
+  box-sizing: content-box;
+  transition: all 0.25s;
+  /* position: relative; */
+  display: block;
+  border-radius: 0.35rem;
+  /*background-color: aliceblue;*/
+  box-shadow: var(--shadow) 0 0 0.5rem;
+  /*width: 100%;*/
+  /*height: 100%;*/
+  /*margin-top: 1.75rem;*/
+  /*padding-inline-start: 0.67rem;*/
+  /*margin-block: 1.25rem;*/
   max-width: 65ch;
   margin-inline-start: calc(var(--max-pad));
 }
 
-article > h1,
-article > h2 {
+.prose > h1,
+.prose > h2,
+.prose > blockquote {
   margin-inline-start: 0;
-	grid-column-end: span 2;
+  grid-column-end: span 2;
 }
-article > h3,
-article a {
-	grid-column-end: span 2;
-	margin-inline-start: calc(var(--max-pad) / 2);
+.prose > blockquote {
+  border-style: none;
+}
+.prose > h3,
+.prose > h4,
+.prose > ul,
+.prose figure {
+  grid-column-end: span 2;
+  margin-inline-start: 0;
+}
+.prose a {
+  grid-column-end: span 2;
+  margin-inline-start: calc(var(--max-pad) / 2);
+  /*margin-inline-start: auto;*/
+}
+section.prose > * {
+  grid-column-end: span 2;
+  margin-inline-start: 0;
 }
 
-.prose :where(p):not(:where([class~="not-prose"],[class~="not-prose"] *)) {
-  margin-top: 0; 
-  margin-bottom: 0; 
+.prose :where(p):not(:where([class~='not-prose'], [class~='not-prose'] *)), .prose :where(ul):not(:where([class~='not-prose'], [class~='not-prose'] *)), .prose :where(li):not(:where([class~='not-prose'], [class~='not-prose'] *))  {
+  margin-block: 0;
+  line-height: 1.5;
 }
-.prose :where(li):not(:where([class~="not-prose"],[class~="not-prose"] *)) {
-  margin-top: .25em;
-  margin-bottom: .25em;
-}
-
 .prose p {
+  margin-block: 0;
+  /*line-height: 1.5;*/
+  line-height: 1.75;
+}
+/*.prose :where(li):not(:where([class~='not-prose'], [class~='not-prose'] *)) {
+  margin-top: 0;
+  margin-bottom: 0;
+}*/
+
+/*.prose p, .prose ul, .prose li {
+  margin-block: 0;
+}*/
+.prose p:not(:empty), .prose > h4:not(:empty) {
+  margin-top: .75rem; /* ez jo */
+  margin-bottom: 0;
+}
+.prose > ul:not(:empty) {
   margin-block: 0;
 }
 
-.prose > p:nth-of-type(even) {
-  align-self: end;
-}
-.prose > p + p:not(:empty):nth-of-type(odd) {
-  margin-top: .75rem; /* ez jo */
-}
+/*.prose > p:nth-of-type(odd) {
+  margin-inline-end: auto;
+}*/
 
 /*.prose > *:empty {
   margin-top: 0!important;
 }*/
 
-
-
-article ul {
-	grid-column-end: span 2;
-}
-article ul, article li {
-  padding-inline: 0;
-  margin-inline: 0;
+.prose ul {
+  grid-column-end: span 2;
 }
 
+/*article.prose {
+  @apply text-neutral-content;
+}*/
+
+/*img {
+  @apply drop-shadow-lg;
+}*/
+svg {
+  display: inline-block;
+}
+svg path {
+  /*stroke: var(--ac);*/
+  stroke: var(--fallback-bc,oklch(var(--bc)/var(--tw-text-opacity)));
+}
+:root .prose {
+  --tw-prose-headings: hsl(var(--c) / 0.8);
+  --tw-prose-body: hsl(var(--c) / 0.8);
+  --tw-prose-bold: hsl(var(--c) / 0.8);
+  --tw-prose-lead: hsl(var(--c));
+  --tw-prose-links: hsl(var(--c));
+  --tw-prose-counters: hsl(var(--c));
+  --tw-prose-bullets: hsl(var(--c) / 0.5);
+
+  --tw-prose-hr: hsl(var(--c) / 0.2);
+  --tw-prose-quotes: hsl(var(--c));
+  --tw-prose-quote-borders: hsl(var(--c) / 0.2);
+  --tw-prose-captions: hsl(var(--c) / 0.5);
+  --tw-prose-code: hsl(var(--c));
+  --tw-prose-pre-code: hsl(var(--c));
+  --tw-prose-pre-bg: hsl(var(--n));
+  --tw-prose-th-borders: hsl(var(--c) / 0.5);
+  --tw-prose-td-borders: hsl(var(--c) / 0.2);
+}
+
+/*section > .card-body {
+  margin-inline: 0!important;
+  max-width: none!important;
+}*/
+
+.prose > h1,
+.prose > h2,
+.prose > h3,
+.prose > h4,
+.prose > h5,
+.prose > h6,
+.prose > blockquote {
+  font-weight: 400;
+}
 
 @tailwind components;
+
+.drawer-toggle:checked ~ .drawer-side > .drawer-overlay {
+  background-color: transparent;
+}
+
 @tailwind utilities;
+
+.prose :where(blockquote):not(:where([class~="not-prose"],[class~="not-prose"] *)) em {
+  font-style: normal;
+}
+
+.collapse {
+  width: auto;
+}
+.collapse-title, .collapse-content {
+  margin: 0;
+  padding: 0;
+}
+.collapse-title {
+  padding-right: calc(var(--padding-card) * 2);
+  width: 100%;
+}
+.collapse-arrow > .collapse-title:after {
+  right: 0.4rem;
+}
+
+.btn-sm {
+  min-height: 1.5rem;
+  height: min-content;
+}
+

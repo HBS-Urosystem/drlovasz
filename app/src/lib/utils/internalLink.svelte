@@ -14,7 +14,7 @@
 
 {#if value.slug}
   <a href={value.slug.current}>
-    <button>[&thinsp;<slot />&thinsp;▶︎]</button>
+    <button><slot /></button>
   </a>
 {:else}
   <slot />

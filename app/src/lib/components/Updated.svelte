@@ -5,7 +5,7 @@
 	export let data: PageData;
 </script>
 
-<aside class="mx-auto text-center">
+<aside class="mx-auto text-center text-accent-content">
   <date class="text-sm">Frissítve: 
     {formatDate(data._updateAt || data._createdAt)}
   </date>
