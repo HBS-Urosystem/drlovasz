@@ -14,6 +14,7 @@
       link: Link,
     },
     listItem: {
+      normal: DefaultListItem,
       bullet: DefaultListItem,
       number: DefaultListItem
     },
