@@ -1,15 +1,15 @@
 import {defineArrayMember, defineField, defineType} from 'sanity'
+import {MenuIcon} from '@sanity/icons'
 import {LeaveIcon} from '@sanity/icons'
-//import {StarIcon} from '@sanity/icons'
 
-export const pageType = defineType({
-  name: 'page',
-  title: 'Pages',
+export const navType = defineType({
+  name: 'nav',
+  title: 'Menu Lists',
   type: 'document',
   fields: [
     defineField({
       name: 'title',
-      title: 'SEO Title',
+      title: 'Nav Title',
       type: 'string',
     }),
     defineField({
@@ -20,48 +20,23 @@ export const pageType = defineType({
       options: {
         source: 'title',
         maxLength: 96,
+        isUnique: () => true,
       },
     }),
     defineField({
-      name: 'desc',
-      title: 'SEO Description',
-      type: 'text',
-      rows: 4,
-    }),
-    defineField({
-      name: 'keywords',
-      title: 'SEO Keywords',
-      type: 'text',
-      rows: 2,
+      name: 'mobile',
+      title: 'Mobile only?',
+      type: 'boolean',
     }),
     defineField({
       name: 'pageBuilder',
-      title: 'Page builder',
+      title: 'Nav builder',
       type: 'array',
       of: [
         defineArrayMember({
-          name: 'heading',
-          type: 'heading',
-        }),
-        defineArrayMember({
-          name: 'body',
-          title: 'Body',
-          type: 'blockType',
-        }),
-        defineArrayMember({
-          name: 'details',
-          type: 'details',
-        }),
-        defineArrayMember({
-          name: 'card',
-          title: 'Card',
-          type: 'card',
-        }),
-
-        defineArrayMember({
           name: 'cta',
           type: 'object',
-          title: 'Internal CTA',
+          title: 'Internal Link',
           fields: [
             {
               name: 'text',
@@ -95,7 +70,7 @@ export const pageType = defineType({
         defineArrayMember({
           name: 'xcta',
           type: 'object',
-          title: 'External CTA',
+          title: 'External Link',
           fields: [
             {
               name: 'text',
@@ -125,22 +100,6 @@ export const pageType = defineType({
             },
           },
         }),
-        defineArrayMember({
-          name: 'form',
-          type: 'form',
-        }),
-        /*defineArrayMember({
-          name: 'textWithIllustration',
-          type: 'textWithIllustration',
-        }),*/
-        /*defineArrayMember({
-          name: 'gallery',
-          type: 'gallery',
-        }),*/
-        /*defineArrayMember({
-          name: 'video',
-          type: 'video',
-        }),*/
       ],
     }),
     defineField({
@@ -150,44 +109,20 @@ export const pageType = defineType({
       readOnly: true,
       hidden: true,
     })
-    /*defineField({
-      name: 'cta',
-      title: 'CTA',
-      type: 'object',
-      fields: [
-        {
-          name: 'text',
-          type: 'string'
-        },
-        {
-          name: 'link',
-          type: 'string'
-        }
-      ]
-    }),
-    defineField({
-      name: 'mainImage',
-      title: 'Main image',
-      type: 'image',
-      options: {
-        hotspot: true,
-      },
-    }),*/
-    /*defineField({
-      name: 'body',
-      title: 'Body',
-      type: 'blockContent',
-    }),*/
+
   ],
-  /*preview: {
+  icon: MenuIcon,
+  preview: {
     select: {
       title: 'title',
-      author: 'author.name',
-      media: 'mainImage',
+      image: 'image',
     },
-    prepare(selection) {
-      const {author} = selection
-      return {...selection, subtitle: author && `by ${author}`}
+    prepare({title, image}) {
+      return {
+        title: title || 'Untitled',
+        subtitle: 'Menu',
+        media: image || MenuIcon,
+      }
     },
-  },*/
+  },
 })

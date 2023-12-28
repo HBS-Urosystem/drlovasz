@@ -1,5 +1,6 @@
 <script lang="ts">
 	import Comps from '$components/Comps.svelte';
+	import Updated from '$components/Updated.svelte';
 	//import Text from '$components/Text.svelte';
 	//import Welcome from '../components/Welcome.svelte';
 	//import { PortableText } from '@portabletext/svelte';
@@ -19,8 +20,4 @@
 {#each data.pageBuilder as content, ix}
   <Comps {content} {ix}/>
 {/each}
-<aside class="mx-auto my-8 text-center">
-  <date class="text-sm text-accent-content">Frissítve: 
-    {formatDate(data._updateAt || data._createdAt)}
-  </date>
-</aside>
+<Updated {data}/>

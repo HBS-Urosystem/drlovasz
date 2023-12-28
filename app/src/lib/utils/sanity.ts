@@ -24,10 +24,33 @@ export async function getPosts() {
   );
 }
 
+export async function getNavs() {
+  return await client.fetch(
+    groq`*[_type == "nav"]{
+      ...,
+      pageBuilder[]{
+        _type == "cta" => {
+          _type,
+          text,
+          "link": @.reference->slug.current
+        },
+
+      },
+
+    }`
+  );
+}
+
 export async function getPage (slug: string) {
   return await client.fetch(
     groq`*[_type == "page" && slug.current == $slug][0]{
       ...,
+      language,
+      "translation": *[_type == "translation.metadata" && references(^._id)].translations[_key != ^.language].value->{
+        title,
+        "slug": slug.current,
+        language
+      },
       pageBuilder[]{
         // "heading" is an "object" from which we can "pick" fields
         _type == "heading" => {

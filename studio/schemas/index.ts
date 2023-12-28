@@ -10,10 +10,12 @@ import {formType} from './formType'
 import {headingType} from './headingType'
 //import {imageGalleryType} from './imageGalleryType'
 import {pageType} from './pageType'
+import {navType} from './navType'
 //import {textWithIllustrationType} from './textWithIllustrationType'
 //import {videoType} from './videoType'
 
 export const schemaTypes = [
+  navType,
   pageType,
   headingType,
   //callToActionType,

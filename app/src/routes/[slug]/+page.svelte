@@ -1,5 +1,6 @@
 <script lang="ts">
 	import Comps from '$components/Comps.svelte';
+	import Updated from '$components/Updated.svelte';
 	import type { PageData } from './$types';
 	import { formatDate } from '$lib/utils';
 
@@ -15,8 +16,4 @@
 {#each data.pageBuilder as content, ix}
   <Comps {content} {ix}/>
 {/each}
-<aside class="mx-auto my-8 text-center text-accent-content">
-  <date class="text-sm">Frissítve: 
-    {formatDate(data._updateAt || data._createdAt)}
-  </date>
-</aside>
+<Updated {data}/>
