@@ -11,7 +11,8 @@
 <header class="prose mx-auto">
   {#if content.image}
     {@const image = content.image}
-    <figure class="gap-x-8 gap-y-0 flex flex-1">
+    <figure class="gap-x-8 gap-y-0 block min-[520px]:flex flex-1 shrink">
+      {#if content.heading}
       <figcaption>
         {#if ix == 0}
           <h1 class="font-semibold">{content.heading}</h1>
@@ -20,8 +21,9 @@
         {/if}
         {#if content.tagline}<h3 class="">{content.tagline}</h3>{/if}
       </figcaption>
+      {/if}
       <img
-        class="object-contain filter-none ml-auto rounded"
+        class="object-contain filter-none mx-auto min-[520px]:mr-0 rounded"
         src={urlFor(image).url()}
         alt="Cover image for {image.alt}"
       />

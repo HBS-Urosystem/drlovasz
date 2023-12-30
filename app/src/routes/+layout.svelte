@@ -13,8 +13,7 @@
 
 <div class="navbar top-0 min-[840px]:-top-10 min-h-0 min-[840px]:min-h-24 gap-2 border-b-2 bg-primary">
   <nav class="flex justify-center">
-    <!--<button class="lang absolute top-0 left-0 text-lg  hover:!bg-base-300">-->
-      <a tabindex="0" aria-label="Language selector" href=/{translation || (lang == 'en' ? '' : 'en')} class="uppercase lang absolute top-0 left-0 text-lg  hover:!bg-base-300">
+      <a tabindex="0" aria-label="Language selector" href=/{translation || (lang == 'en' ? '' : 'en')} class="uppercase lang absolute top-0 left-0 text-lg">
         <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="h-8 w-8">
           <path stroke-linecap="round" stroke-linejoin="round" d="M12 21a9.004 9.004 0 0 0 8.716-6.747M12 21a9.004 9.004 0 0 1-8.716-6.747M12 21c2.485 0 4.5-4.03 4.5-9S14.485 3 12 3m0 18c-2.485 0-4.5-4.03-4.5-9S9.515 3 12 3m0 0a8.997 8.997 0 0 1 7.843 4.582M12 3a8.997 8.997 0 0 0-7.843 4.582m15.686 0A11.953 11.953 0 0 1 12 10.5c-2.998 0-5.74-1.1-7.843-2.918m15.686 0A8.959 8.959 0 0 1 21 12c0 .778-.099 1.533-.284 2.253m0 0A17.919 17.919 0 0 1 12 16.5c-3.162 0-6.133-.815-8.716-2.247m0 0A9.015 9.015 0 0 1 3 12c0-1.605.42-3.113 1.157-4.418" />
       </svg>
@@ -25,7 +24,7 @@
     <span class="text-xl">{nav.title}</span>
 
     <div class="dropdown dropdown-end ml--auto min-[840px]:hidden absolute top-0 right-0">
-      <div role="button" tabindex="0" aria-label="Dropdown menu" class="menu hover:!bg-base-300">
+      <div role="button" tabindex="0" aria-label="Dropdown menu" class="menu">
         <svg xmlns="http://www.w3.org/2000/svg" class="h-8 w-8" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h8m-8 6h16" /></svg>
       </div>
       <ul class="menu menu-sm dropdown-content gap-2 mt-2 z-[999] p-2 shadow bg-primary rounded-box rounded-t-none join join-vertical">
