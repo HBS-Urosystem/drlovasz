@@ -50,6 +50,9 @@
       :root *, .card {
         --rounded-box: 0;
       }
+      .rounded {
+        border-radius: 0;
+      }
       /*article p, article ul, article ol, article dl, article table, footer + aside p {
         font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
       }*/

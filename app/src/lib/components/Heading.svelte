@@ -21,7 +21,7 @@
         {#if content.tagline}<h3 class="">{content.tagline}</h3>{/if}
       </figcaption>
       <img
-        class="object-contain filter-none ml-auto"
+        class="object-contain filter-none ml-auto rounded"
         src={urlFor(image).url()}
         alt="Cover image for {image.alt}"
       />
