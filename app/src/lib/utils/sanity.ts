@@ -81,7 +81,7 @@ export async function getPage (slug: string) {
             markDefs[]{
               ...,
               _type == "internalLink" => {
-                "slug": @.reference->slug
+                "slug": @.href->slug.current
               }
             }
           },
@@ -134,7 +134,7 @@ export async function getPage (slug: string) {
                 markDefs[]{
                   ...,
                   _type == "internalLink" => {
-                    "slug": @.reference->slug
+                    "slug": @.href->slug.current
                   }
                 }
               },
