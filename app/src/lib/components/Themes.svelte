@@ -13,6 +13,16 @@
 
 <svelte:head>
   {#if font}
+    <link rel="preconnect"
+      href="https://fonts.gstatic.com"
+      crossorigin />
+    <link rel="preload"
+      as="style"
+      href="https://fonts.googleapis.com/css2?family=Josefin+Sans&display=swap" />
+    <link rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Josefin+Sans&display=swap"
+      media="print" onload="this.media='all'" />
+
     <style>
       :root {
         font-family: 'Josefin Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
