@@ -45,6 +45,7 @@ export async function getPage (slug: string) {
   return await client.fetch(
     groq`*[_type == "page" && slug.current == $slug][0]{
       ...,
+      _updatedAt,
       language,
       "translation": *[_type == "translation.metadata" && references(^._id)].translations[_key != ^.language].value->{
         title,

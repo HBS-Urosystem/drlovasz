@@ -21,5 +21,5 @@ export const load = async () => {
   const navs = await getNavs();
   if (navs) return {navs};
 
-  throw error(404, "No Navs found");
+  throw error(404, "Not found");
 };

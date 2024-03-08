@@ -28,7 +28,8 @@
         font-family: 'Josefin Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
         padding-top: 0.25rem;
       }
-      article p, article ul, article ol, article dl, article table, footer + aside p {
+      /*article p, article ul, article ol, article dl, article table, footer + aside p {*/
+      .prose {
         font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
       }
     </style>

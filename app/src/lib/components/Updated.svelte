@@ -8,6 +8,7 @@
 <aside class="mx-auto my-8 text-center">
   <date class="text-sm text-accent-content">
     {#if data.language == 'hu'}Frissítve: {:else}Updated at: {/if}
-    {formatDate(data._updateAt || data._createdAt, data.language)}
+    {formatDate(data._updatedAt || data._createdAt, data.language)}
+    <!--{data._updatedAt}-->
   </date>
 </aside>

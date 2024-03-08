@@ -81,8 +81,8 @@ article {
   margin-inline-start: calc(var(--max-pad));
 }
 
-.prose > h1,
-.prose > h2,
+.prose h1,
+.prose h2,
 .prose > blockquote {
   margin-inline-start: 0;
   grid-column-end: span 2;
@@ -90,8 +90,8 @@ article {
 .prose > blockquote {
   border-style: none;
 }
-.prose > h3,
-.prose > h4,
+.prose h3,
+.prose h4,
 .prose > ul,
 .prose figure {
   grid-column-end: span 2;
@@ -124,7 +124,7 @@ section.prose > * {
 /*.prose p, .prose ul, .prose li {
   margin-block: 0;
 }*/
-.prose p:not(:empty), .prose > h4:not(:empty) {
+.prose p:not(:empty), .prose h4:not(:empty) {
   margin-top: .75rem; /* ez jo */
   margin-bottom: 0;
 }
@@ -183,12 +183,12 @@ svg path {
   max-width: none!important;
 }*/
 
-.prose > h1,
-.prose > h2,
-.prose > h3,
-.prose > h4,
-.prose > h5,
-.prose > h6,
+.prose h1,
+.prose h2,
+.prose h3,
+.prose h4,
+.prose h5,
+.prose h6,
 .prose > blockquote {
   font-weight: 400;
 }

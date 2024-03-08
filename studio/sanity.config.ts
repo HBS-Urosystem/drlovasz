@@ -10,7 +10,7 @@ export const dataset = process.env.SANITY_STUDIO_DATASET!
 
 export default defineConfig({
   name: 'project-name',
-  title: 'Project Name',
+  title: 'Dr. Lovasz Config',
   projectId,
   dataset,
   schema: {

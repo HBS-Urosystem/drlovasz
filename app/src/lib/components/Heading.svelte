@@ -5,7 +5,7 @@
 	//export let data: PageData;
 	export let content: PageData;
 	export let ix: Number;
-  //console.log({content})
+  //console.log(content.image)
 </script>
 
 <header class="prose mx-auto">
@@ -13,24 +13,24 @@
     {@const image = content.image}
     <figure class="gap-x-8 gap-y-0 block min-[520px]:flex flex-1 shrink">
       {#if content.heading}
-      <figcaption>
-        {#if ix == 0}
-          <h1 class="font-semibold">{content.heading}</h1>
-        {:else}
-          <h2 class="font-medium">{content.heading}</h2>
-        {/if}
-        {#if content.tagline}<h3 class="">{content.tagline}</h3>{/if}
-      </figcaption>
+        <figcaption class="text-center mx-auto">
+          {#if ix == 0}
+            <h1 class="">{content.heading}</h1>
+          {:else}
+            <h2 class="font-medium">{content.heading}</h2>
+          {/if}
+          {#if content.tagline}<h3 class="">{content.tagline}</h3>{/if}
+        </figcaption>
       {/if}
       <img
-        class="object-contain filter-none mx-auto min-[520px]:mr-0 rounded"
+        class="w-[34%] aspect-square object-cover filter-none mx-auto m-in-[520px]:mr-0 rounded"
         src={urlFor(image).url()}
         alt="Cover image for {image.alt}"
       />
     </figure>
   {:else}
     {#if ix == 0}
-      <h1 class="font-semibold">{content.heading}</h1>
+      <h1 class="">{content.heading}</h1>
     {:else}
       <h2 class="font-medium">{content.heading}</h2>
     {/if}

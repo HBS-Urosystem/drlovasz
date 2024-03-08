@@ -19,5 +19,5 @@ export const load = async () => {
   const page = await getPage("index");
   if (page) return page;
 
-  throw error(404, "Not that found");
+  throw error(404, "Not found");
 };
