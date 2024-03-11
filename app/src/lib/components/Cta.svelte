@@ -8,7 +8,7 @@
 
 <aside class="mx-auto text-center">
   <a href={content.href} rel={ext ? 'extarnal noopener' : ''} target={ext ? '_blank' : ''}>
-    <button class="btn btn-sm bg-primary text-primary-content hover:bg-accent">
+    <button class="btn btn-sm bg-primary text-primary-content hover:text-accent-content hover:bg-accent">
       {content.text}
     </button>
   </a>
