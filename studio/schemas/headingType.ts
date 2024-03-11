@@ -78,11 +78,12 @@ export const headingType = defineType({
     select: {
       title: 'heading',
       image: 'image',
+      tagline: 'tagline',
     },
-    prepare({title, image}) {
+    prepare({title, image, tagline}) {
       return {
-        title: title || 'Untitled',
-        subtitle: 'Heading',
+        title: title || 'Heading',
+        subtitle: tagline || 'Heading',
         media: image || BlockElementIcon,
       }
     },
