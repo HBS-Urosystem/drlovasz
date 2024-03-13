@@ -16,7 +16,7 @@
         <figcaption class="text-center mx-auto">
           {#if content.heading}
             {#if ix == 0}
-              <h1>{content.heading}</h1>
+              <h1 class="font-semibold">{content.heading}</h1>
             {:else}
               <h2 class="font-medium">{content.heading}</h2>
             {/if}

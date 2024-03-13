@@ -30,7 +30,7 @@
       <ul class="menu menu-sm dropdown-content gap-2 mt-2 z-[999] p-2 shadow bg-primary rounded-box rounded-t-none join join-vertical">
         {#each nav.pageBuilder as n}
           <li>
-            <a tabindex="0" href="/{n.link == 'index' ? '' : n.link}">{n.text}</a>
+            <a class="hover:bg-accent" tabindex="0" href="/{n.link == 'index' ? '' : n.link}">{n.text}</a>
           </li>
         {/each}
       </ul>

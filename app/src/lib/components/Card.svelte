@@ -3,9 +3,9 @@
 	import type { PageData } from '../../routes/$types';
 
   export let content: PageData;
-	let ix: Number;
+	export let ix: Number;
 
-  //console.log(content)
+  //console.log(ix)
 </script>
 
 <section class="card bg-neutral tw-prose-bold t-ext-neutral-content max-w-prose" class:min-[840px]:hidden={content.mobile}>
@@ -19,8 +19,9 @@
         {/if}
       </div>
     {/if}
-    {#each content.pageBuilder as c, ix}
-      <Comps content={c} ix={0}/>
+    {#each content.pageBuilder as c, i}
+      <!--{@const index = +i + +ix}-->
+      <Comps content={c} ix={+i + +ix}/>
     {/each}
   </div>
 </section>
