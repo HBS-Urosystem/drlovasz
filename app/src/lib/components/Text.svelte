@@ -5,8 +5,8 @@
 	import Link from '$lib/utils/Link.svelte';
   import DefaultListItem from '$lib/utils/DefaultListItem.svelte'
 
-	export let content: PageData;
-	let ix: Number;
+	export let content: PageData
+	let ix: Number
 
   const formatBody = {
     marks: {
@@ -23,7 +23,7 @@
 </script>
 
 
-<article class="prose mx-auto gap-x-8 gap-y-0 block {content.textBlock.length > 1 || content.twocols ? 'min-[520px]:grid' : ''}">
+<article class="prose mx-auto gap-x-8 gap-y-0 block {content.textBlock.length > 1 && content.twocols ? 'min-[520px]:grid' : ''}">
   {#if content.title}
     {#if ix == 0}
       <h1 class="font-semibold">{content.title}</h1>
