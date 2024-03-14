@@ -1,5 +1,5 @@
 import {defineField, defineType} from 'sanity'
-import {StringIcon} from '@sanity/icons'
+import {BlockContentIcon} from '@sanity/icons'
 
 export const blockType = defineType({
   name: 'blockType',
@@ -22,7 +22,7 @@ export const blockType = defineType({
       type: 'boolean',
     }),
   ],
-  icon: StringIcon,
+  icon: BlockContentIcon,
   preview: {
     select: {
       title: 'title',
@@ -32,7 +32,7 @@ export const blockType = defineType({
       return {
         title: title || 'Untitled',
         subtitle: 'Text Block',
-        media: image || StringIcon,
+        media: image || BlockContentIcon,
       }
     },
   },

@@ -1,5 +1,5 @@
 import {defineField, defineType} from 'sanity'
-import {BlockElementIcon} from '@sanity/icons'
+import {ChevronDownIcon} from '@sanity/icons'
 
 export const detailsType = defineType({
   name: 'details',
@@ -16,7 +16,7 @@ export const detailsType = defineType({
       type: 'blockContent',
     }),
   ],
-  icon: BlockElementIcon,
+  icon: ChevronDownIcon,
   preview: {
     select: {
       title: 'summary',
@@ -26,7 +26,7 @@ export const detailsType = defineType({
       return {
         title: title || 'Untitled',
         subtitle: 'Details',
-        media: image || BlockElementIcon,
+        media: image || ChevronDownIcon,
       }
     },
   },

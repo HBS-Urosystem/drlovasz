@@ -9,7 +9,14 @@
   $: lang = $page.data.language
   $: nav = data.navs.find((n: { language: string; slug: { current: string; }; }) => n.language == lang && n.slug?.current == 'main')
   $: translation = $page.data.translation[0]?.slug == 'index' ? '' : $page.data.translation[0]?.slug
+//console.log($page.data)
 </script>
+
+<svelte:head>
+  <title>{$page.data.title}</title>
+  <meta name="description" content={$page.data.desc} />
+  <meta name="keywords" content={$page.data.keywords} />
+</svelte:head>
 
 <div class="navbar top-0 min-[840px]:-top-10 min-h-0 min-[840px]:min-h-24 gap-2 border-b-2 bg-primary">
   <nav class="flex justify-center">
