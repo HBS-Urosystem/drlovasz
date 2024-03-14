@@ -48,9 +48,5 @@
 	"type": "module",
 	"engines": {
 		"node": ">= 14.18"
-	},
-	"packageManager": "yarn@3.6.3",
-	"resolutions": {
-		"@portabletext/svelte@^2.1.1": "patch:@portabletext/svelte@npm%3A2.1.1#./.yarn/patches/@portabletext-svelte-npm-2.1.1-52e3ac5001.patch"
 	}
 }
