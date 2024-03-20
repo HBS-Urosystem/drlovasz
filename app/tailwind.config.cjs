@@ -15,11 +15,12 @@ const config = {
   daisyui: {
     themes: [
       {
-        kriszta: {
+        drlovasz: {
           ...require("daisyui/src/theming/themes")["corporate"],
-          "primary": "#c4b4a6",
+          "primary": "#6e9F9C",
           "secondary": "#c4b4a6",
           "accent": "#c4b4a6",
+          "accent-content": "#6e9F9C",
           "neutral": "#ffffff",
           "base-100": "#ece7e3",
         },
@@ -36,6 +37,16 @@ const config = {
         }
       },
       {
+        kriszta: {
+          ...require("daisyui/src/theming/themes")["corporate"],
+          "primary": "#c4b4a6",
+          "secondary": "#c4b4a6",
+          "accent": "#c4b4a6",
+          "neutral": "#ffffff",
+          "base-100": "#ece7e3",
+        },
+      },
+      {
         blueish: {
           ...require("daisyui/src/theming/themes")["nord"],
           "primary": "#fff1eb",
@@ -43,17 +54,6 @@ const config = {
           "accent": "#fff1eb",
           "neutral": "#fff1eb",
           "base-100": "#ace0f9",
-        },
-      },
-      {
-        drlovasz: {
-          ...require("daisyui/src/theming/themes")["corporate"],
-          "primary": "#6e9F9C",
-          "secondary": "#c4b4a6",
-          "accent": "#c4b4a6",
-          "accent-content": "#6e9F9C",
-          "neutral": "#ffffff",
-          "base-100": "#ece7e3",
         },
       },
     ], // true: all themes | false: only light + dark | array: specific themes like this ["light", "dark", "cupcake"]
