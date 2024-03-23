@@ -1,15 +1,27 @@
 <script lang="ts">
 	import '$src/app.postcss';
   //import { dev } from '$app/environment'
+  //import { onMount } from 'svelte'
   import { page } from '$app/stores';
 	import Themes from '$components/Themes.svelte';
 	import type { PageData } from './$types';
 	export let data: PageData;
+  let lang: string;
+  //console.log($page)
 
-  $: lang = $page.data.language
+  $: {
+    lang = $page.data.language
+    //console.log(lang)
+    //if (document?.querySelector('html')) document.querySelector('html').lang = lang
+  }
   $: nav = data.navs.find((n: { language: string; slug: { current: string; }; }) => n.language == lang && n.slug?.current == 'main')
   $: translation = $page.data.translation[0]?.slug == 'index' ? '' : $page.data.translation[0]?.slug
-//console.log($page.data)
+  /*onMount(() => {
+    document.querySelector('html').lang = lang
+    console.log(lang)
+	})*/
+  //$: () => {
+	//}
 </script>
 
 <svelte:head>
@@ -158,9 +170,7 @@
           C215.11,306.774,229.932,314.259,246.475,314.259z M246.475,226.259c18.748,0,34,15.252,34,34c0,18.747-15.252,34-34,34
           c-18.748,0-34-15.253-34-34C212.475,241.511,227.727,226.259,246.475,226.259z"/>
       </g>
-    </svg>s
-      )&nbsp;at&nbsp;<a href="https://www.urosystem.com/hu">UroSystem</a>
-
+    </svg>s)&nbsp;at&nbsp;<a href="https://www.urosystem.com/hu">UroSystem</a>
     </p>
   </div>
 </footer>
