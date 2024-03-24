@@ -26,8 +26,8 @@
       {/if}
       <img
         class="w-[34%] aspect-square object-cover filter-none mx-auto m-in-[520px]:mr-0 rounded"
-        src={urlFor(image).url()}
-        alt="Cover image for {image.alt}"
+        src={urlFor(image).format('webp').size(960, 960).fit('crop').url()}
+        alt={image.alt}
       />
     </figure>
   {:else}
