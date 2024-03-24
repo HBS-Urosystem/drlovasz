@@ -1,6 +1,7 @@
 import {defineArrayMember, defineField, defineType} from 'sanity'
 import {MenuIcon} from '@sanity/icons'
 import {LeaveIcon} from '@sanity/icons'
+import {EnterIcon} from '@sanity/icons'
 
 export const navType = defineType({
   name: 'nav',
@@ -14,7 +15,7 @@ export const navType = defineType({
     }),
     defineField({
       name: 'slug',
-      title: 'SEO Slug',
+      title: 'ID (main)',
       type: 'slug',
       validation: (Rule) => Rule.required(),
       options: {
@@ -23,11 +24,11 @@ export const navType = defineType({
         isUnique: () => true,
       },
     }),
-    defineField({
+    /*defineField({
       name: 'mobile',
       title: 'Mobile only?',
       type: 'boolean',
-    }),
+    }),*/
     defineField({
       name: 'pageBuilder',
       title: 'Nav builder',
@@ -36,7 +37,7 @@ export const navType = defineType({
         defineArrayMember({
           name: 'cta',
           type: 'object',
-          title: 'Internal Link',
+          title: 'Internal Page',
           fields: [
             {
               name: 'text',
@@ -52,7 +53,7 @@ export const navType = defineType({
               ],
             },
           ],
-          icon: LeaveIcon,
+          icon: EnterIcon,
           preview: {
             select: {
               title: 'text',
@@ -60,9 +61,9 @@ export const navType = defineType({
             },
             prepare({title, image}) {
               return {
-                title: `[ ${title} ▶︎ ]` || 'Untitled',
-                subtitle: 'Internal CTA',
-                media: image || LeaveIcon,
+                title: `[ ${title} ]` || 'Untitled',
+                subtitle: 'Internal page',
+                media: image || EnterIcon,
               }
             },
           },
@@ -93,8 +94,8 @@ export const navType = defineType({
             },
             prepare({title, image}) {
               return {
-                title: `[ ${title} ▶︎ ]` || 'Untitled',
-                subtitle: 'External CTA',
+                title: `[ ${title} ]` || 'Untitled',
+                subtitle: 'External link',
                 media: image || LeaveIcon,
               }
             },

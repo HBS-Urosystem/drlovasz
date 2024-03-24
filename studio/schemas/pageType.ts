@@ -1,6 +1,6 @@
 import {defineArrayMember, defineField, defineType} from 'sanity'
 import {LeaveIcon} from '@sanity/icons'
-//import {StarIcon} from '@sanity/icons'
+import {EnterIcon} from '@sanity/icons'
 
 export const pageType = defineType({
   name: 'page',
@@ -77,7 +77,7 @@ export const pageType = defineType({
               ],
             },
           ],
-          icon: LeaveIcon,
+          icon: EnterIcon,
           preview: {
             select: {
               title: 'text',
@@ -85,9 +85,9 @@ export const pageType = defineType({
             },
             prepare({title, image}) {
               return {
-                title: `[ ${title} ▶︎ ]` || 'Untitled',
+                title: `[ ${title} ]` || 'Untitled',
                 subtitle: 'Internal CTA',
-                media: image || LeaveIcon,
+                media: image || EnterIcon,
               }
             },
           },
@@ -118,17 +118,17 @@ export const pageType = defineType({
             },
             prepare({title, image}) {
               return {
-                title: `[ ${title} ▶︎ ]` || 'Untitled',
+                title: `[ ${title} ]` || 'Untitled',
                 subtitle: 'External CTA',
                 media: image || LeaveIcon,
               }
             },
           },
         }),
-        defineArrayMember({
+        /*defineArrayMember({
           name: 'form',
           type: 'form',
-        }),
+        }),*/
         /*defineArrayMember({
           name: 'textWithIllustration',
           type: 'textWithIllustration',

@@ -6,7 +6,7 @@ import blockContent from './blockContent'
 //import {callToActionType} from './callToActionType'
 import {detailsType} from './detailsType'
 import {cardType} from './cardType'
-import {formType} from './formType'
+//import {formType} from './formType'
 import {headingType} from './headingType'
 //import {imageGalleryType} from './imageGalleryType'
 import {pageType} from './pageType'
@@ -21,7 +21,7 @@ export const schemaTypes = [
   //callToActionType,
   //textWithIllustrationType,
   //imageGalleryType,
-  formType,
+  //formType,
   detailsType,
   cardType,
   //videoType,

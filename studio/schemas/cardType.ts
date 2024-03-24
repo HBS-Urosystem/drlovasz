@@ -1,6 +1,7 @@
 import {defineArrayMember, defineField, defineType} from 'sanity'
 import {BookIcon} from '@sanity/icons'
 import {LeaveIcon} from '@sanity/icons'
+import {EnterIcon} from '@sanity/icons'
 
 export const cardType = defineType({
   name: 'card',
@@ -55,7 +56,7 @@ export const cardType = defineType({
               ],
             },
           ],
-          icon: LeaveIcon,
+          icon: EnterIcon,
           preview: {
             select: {
               title: 'text',
@@ -63,9 +64,9 @@ export const cardType = defineType({
             },
             prepare({title, image}) {
               return {
-                title: `[ ${title} ▶︎ ]` || 'Untitled',
+                title: `[ ${title} ]` || 'Untitled',
                 subtitle: 'Internal CTA',
-                media: image || LeaveIcon,
+                media: image || EnterIcon,
               }
             },
           },
@@ -96,17 +97,17 @@ export const cardType = defineType({
             },
             prepare({title, image}) {
               return {
-                title: `[ ${title} ▶︎ ]` || 'Untitled',
+                title: `[ ${title} ]` || 'Untitled',
                 subtitle: 'External CTA',
                 media: image || LeaveIcon,
               }
             },
           },
         }),
-        defineArrayMember({
+        /*defineArrayMember({
           name: 'form',
           type: 'form',
-        }),
+        }),*/
       ],
     }),
     
