@@ -79,7 +79,7 @@
 <footer class="footer footer-center flex-nowrap p-4 bg-primary text-base-content">
   <div>
     <p class="mx-auto w-max">
-      Made with <svg
+      {#if lang == 'hu'}Az oldalt{:else}Made with{/if} <svg
         data-sanity-icon="heart-filled"
         width="1em"
         height="1em"
@@ -91,7 +91,7 @@
           fill="#52b2d6"
           stroke="#52b2d6"
           stroke-width="1.2"
-        /></svg>&nbsp;not&nbsp;<svg 
+        /></svg>{#if lang == 'hu'}-vel&nbsp;készítettük,&nbsp;nem&nbsp;{:else}&nbsp;not&nbsp;{/if}<svg 
       width="1em"
       height="1em"
       xmlns="http://www.w3.org/2000/svg"
@@ -168,7 +168,7 @@
           C215.11,306.774,229.932,314.259,246.475,314.259z M246.475,226.259c18.748,0,34,15.252,34,34c0,18.747-15.252,34-34,34
           c-18.748,0-34-15.253-34-34C212.475,241.511,227.727,226.259,246.475,226.259z"/>
       </g>
-    </svg>&nbsp;at&nbsp;<a href="https://www.urosystem.com/hu">UroSystem</a>
+    </svg>{#if lang == 'hu'}-vel. {:else}&nbsp;at&nbsp;{/if}<a href="https://www.urosystem.com/hu">UroSystem</a>
     </p>
   </div>
 </footer>
