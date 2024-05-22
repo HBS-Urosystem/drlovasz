@@ -3,7 +3,7 @@
   //import { dev } from '$app/environment'
   //import { onMount } from 'svelte'
   import { page } from '$app/stores';
-	import Themes from '$components/Themes.svelte';
+	//import Themes from '$components/Themes.svelte';
 	import type { PageData } from './$types';
 	export let data: PageData;
   let lang: string;
@@ -175,7 +175,7 @@
 </footer>
 
 <!--{#if dev}-->
-  <Themes/>
+  <!--<Themes/>-->
 <!--{/if}-->
 
 

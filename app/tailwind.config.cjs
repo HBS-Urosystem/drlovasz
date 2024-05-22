@@ -14,17 +14,17 @@ const config = {
   // daisyUI config (optional - here are the default values)
   daisyui: {
     themes: [
-      {
-        drlovasz: {
-          ...require("daisyui/src/theming/themes")["corporate"],
-          "primary": "#6e9F9C",
-          "secondary": "#c4b4a6",
-          "accent": "#c4b4a6",
-          "accent-content": "#6e9F9C",
-          "neutral": "#ffffff",
-          "base-100": "#ece7e3",
-        },
-      },
+      //{
+      //  drlovasz: {
+      //    ...require("daisyui/src/theming/themes")["corporate"],
+      //    "primary": "#6e9F9C",
+      //    "secondary": "#c4b4a6",
+      //    "accent": "#c4b4a6",
+      //    "accent-content": "#6e9F9C",
+      //    "neutral": "#ffffff",
+      //    "base-100": "#ece7e3",
+      //  },
+      //},
       {
         business: {
           ...require("daisyui/src/theming/themes")["business"],
@@ -36,29 +36,29 @@ const config = {
           "base-100": "#202020",
         }
       },
-      {
-        kriszta: {
-          ...require("daisyui/src/theming/themes")["corporate"],
-          "primary": "#c4b4a6",
-          "secondary": "#c4b4a6",
-          "accent": "#c4b4a6",
-          "neutral": "#ffffff",
-          "base-100": "#ece7e3",
-        },
-      },
-      {
-        blueish: {
-          ...require("daisyui/src/theming/themes")["nord"],
-          "primary": "#fff1eb",
-          "secondary": "#fff1eb",
-          "accent": "#fff1eb",
-          "neutral": "#fff1eb",
-          "base-100": "#ace0f9",
-        },
-      },
+    //  {
+    //    kriszta: {
+    //      ...require("daisyui/src/theming/themes")["corporate"],
+    //      "primary": "#c4b4a6",
+    //      "secondary": "#c4b4a6",
+    //      "accent": "#c4b4a6",
+    //      "neutral": "#ffffff",
+    //      "base-100": "#ece7e3",
+    //    },
+    //  },
+    //  {
+    //    blueish: {
+    //      ...require("daisyui/src/theming/themes")["nord"],
+    //      "primary": "#fff1eb",
+    //      "secondary": "#fff1eb",
+    //      "accent": "#fff1eb",
+    //      "neutral": "#fff1eb",
+    //      "base-100": "#ace0f9",
+    //    },
+    //  },
     ], // true: all themes | false: only light + dark | array: specific themes like this ["light", "dark", "cupcake"]
-    darkTheme: "business", // name of one of the included themes for dark mode
-    lightTheme: "kriszta", // name of one of the included themes for dark mode
+    //darkTheme: "business", // name of one of the included themes for dark mode
+    //lightTheme: "kriszta", // name of one of the included themes for dark mode
     base: true, // applies background color and foreground color for root element by default
     styled: true, // include daisyUI colors and design decisions for all components
     utils: true, // adds responsive and modifier utility classes
