@@ -9,4 +9,4 @@
 {#each data.pageBuilder as content, ix}
   <Comps {content} {ix}/>
 {/each}
-<Updated {data}/>
+<!-- <Updated {data}/> -->
