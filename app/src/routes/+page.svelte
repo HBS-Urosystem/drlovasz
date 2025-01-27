@@ -1,6 +1,6 @@
 <script lang="ts">
 	import Comps from '$components/Comps.svelte';
-	import Updated from '$components/Updated.svelte';
+	// import Updated from '$components/Updated.svelte';
 	import type { PageData } from './$types';
 
 	export let data: PageData;
